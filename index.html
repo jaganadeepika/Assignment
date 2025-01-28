@@ -3,83 +3,116 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" rel="stylesheet">
     <title>Document</title>
     <style>
-        body{
-            background-image:url(data:image/jpeg;base64,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);
-            
+        body, html {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            overflow: hidden;
         }
-        #a{
-            
-            font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+
+        .video-bg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover; 
+            z-index: -1; 
+        }
+
+        #a {
+            font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
             text-align: center;
-            margin-top:70px;
-        }
-        #mybox{
-           width:600px;
-           height:350px;
-           border-style: solid;
-           border-color:black;
-           border-width: 0.5px;
-           border-radius: 20px;
-           margin-left: 450px;
-           padding-top: 20px;
-           box-shadow: 10px 10px 10px;
-           background-image: url(https://img.freepik.com/free-photo/liquid-marbling-paint-texture-background-fluid-painting-abstract-texture-intensive-color-mix-wallpaper_1258-82940.jpg);
-           background-size: cover;
+            margin-top: 200px;
+            color: white;
         }
         #b{
-           width:550px;
-           height:300px;
-           border-style:solid;
-           border-color:black;
-           border-width: 0.5px;
-           border-radius: 20px;
-           margin-left: 25px;
-           margin-top: 15px;
+            font-size: 15px;
         }
-        
-        p{
-            text-align: center;
-            margin-top: 90px;
-            font-family:cursive;
-            color: aliceblue;
-            font-size:x-large;
+        #c{
+            font-size: 40px;
         }
-        nav{
-            
-            position:fixed;
-            text-align:center ;
-            width:100%;
+        nav {
+            position: fixed;
+            text-align: right;
+            width: 100%;
             margin-top: 50px;
         }
-        a{
-            margin:20px;
-            color:rgb(6, 3, 19);
-            font-size:20px;
+
+        a {
+            margin: 20px;
+            color: orange;
+            font-size: 20px;
+            text-decoration: none;
         }
-        a:hover{
-            background-color: rgb(223, 55, 229);
-            padding:10px;
+
+        a:hover {
+            background-color: white;
+            padding: 10px;
             border-bottom: 2px solid blue;
             border-radius: 100px;
-            
+        }
+        content{
+            color: aliceblue;
+        }
+        #icon{
+            font-size: 20px;
+            color: orange;
+            display: flex;
+            gap: 40px;
+            justify-content: center;
+            margin-top: 20px;
+        }
+        #typing {
+            font-size: 40px;
+            color: rgb(175, 116, 7);
+            border-right: 2px solid;
+            white-space: nowrap;
+            overflow: hidden;
+            width: fit-content;
+            margin: 0 auto;
         }
     </style>
 </head>
 <body>
-    <h1 id="a">Hello!<br><br>I am Deepika Jagana</h1>
-    <div id="c">
-    <div id="mybox">
-       <div id="b">
-        <p>I have recently completed B.tech 2nd year at University of Indain Institute Of Technology Bhubaneswar.</p>
-       </div>
-    </div>
-</div>
+    <video autoplay muted loop class="video-bg">
+        <source src="Particles_7___48s___4k_res.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
     <nav>
-        <a href="http://127.0.0.1:5500/aboutme.html" style="text-decoration: none;">About</a>
-        <a href="http://127.0.0.1:5500/work.html" style="text-decoration: none;">My work</a>
-        <a href="http://127.0.0.1:5500/contact.html" style="text-decoration: none;">Contact me</a>
+        <a href="http://127.0.0.1:5500/aboutme.html">About</a>
+        <a href="http://127.0.0.1:5500/work.html">My work</a>
+        <a href="http://127.0.0.1:5500/contact.html">Contact me</a>
     </nav>
+    <div id="a">
+    <h1 id="c">Hello!<br><br>I am <span id="typing"></span></h1>
+    <content id="b">I love to learn and create intuitive, scalable, and optimized front-end designs that enhance user experience.</content><br><br>
+    <div id="icon">
+        <i class="fa-brands fa-linkedin"></i>
+        <i class="fa-sharp fa-solid fa-phone"></i>
+        <i class="fa-brands fa-github"></i>
+    </div>    
+</div>
+
+<script>
+    const text = "Deepika Jagana";
+    let index = 0;
+    const speed = 200; 
+
+    function typeEffect() {
+        if (index < text.length) {
+            document.getElementById("typing").innerHTML += text.charAt(index);
+            index++;
+            setTimeout(typeEffect, speed);
+        } else {
+            document.getElementById("typing").style.borderRight = "2px solid transparent";
+        }
+    }
+
+    window.onload = typeEffect; 
+</script>
 </body>
 </html>
